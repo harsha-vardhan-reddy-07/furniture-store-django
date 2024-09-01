@@ -1,0 +1,51 @@
+.HomePage{
+
+    margin-top: 17vh;
+
+}
+
+.home-banner img{
+
+    height: 60vh;
+    width: 96%;
+    margin-left: 2%;
+    border-radius: 0.3rem;
+}
+
+.home-categories-container{
+
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+}
+
+.home-category-card{
+
+    text-align: center;
+    width: 210px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+
+.home-category-card img{
+
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* border: 1px solid #c6c4c4; */
+}
+
+
+.home-category-card h5{
+
+    width: fit-content;
+    padding: 5px;
+    color: #4c4747;
+}

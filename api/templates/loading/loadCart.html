@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <script>
+
+        const user = localStorage.getItem('userId');
+
+        if(user){
+            
+            window.location.href = `/cart/${user}`;
+        }else{
+            window.location.href = `/login`
+        }
+
+
+    </script>
+
+{% endblock %}

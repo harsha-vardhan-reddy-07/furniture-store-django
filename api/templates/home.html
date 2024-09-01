@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block styleLink %}
+
+<link rel="stylesheet" href="/static/css/home.css">
+<link rel="stylesheet" href="/static/css/products.css">
+
+{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+<div class="HomePage">
+
+      <div class="home-banner" > 
+        <img src="https://as1.ftcdn.net/v2/jpg/02/85/60/26/1000_F_285602674_6PGDuZubLwYVRPFJXIydwKoFoYe0oaxl.jpg" alt="" />
+      </div>
+
+      {% if trendLen > 0 %}
+      <div class="products-container">
+        <div class="products-body">
+            <h3>Trending Products</h3>
+            <div class="products">
+
+                  {% for product in trendingProducts %}
+                      <a href="/load-product/{{product.id}}">
+                        <div class='product-item' >
+                            <div class="product" >
+                                <img src="{{product.mainImg}}" alt="" />
+                                <div class="product-data">
+                                    <h6>{{product.title}}</h6>
+                                    <p>{{product.description}}</p>
+                                    <h5>&#8377; {{product.discountedPrice}} <s>{{product.price}}</s><p>( {{product.discount}}% off)</p></h5>
+                                </div>
+                            </div>
+                        </div>
+                      </a>
+                  {% endfor %}
+ 
+            </div>
+        </div>
+      </div>
+
+      {% endif %}
+
+      <div class="home-categories-container">
+
+        <a href="/category/Sofa">
+          <div class="home-category-card">
+            <img src="https://mysleepyhead.com/media/catalog/product/3/_/3_seater_sofa_2.jpg" alt="" />
+            <h5>Sofa</h5>
+          </div>
+        </a>
+
+        <a href="/category/Dining">
+          <div class="home-category-card" >
+            <img src="https://m.media-amazon.com/images/I/711DxvZTb7L._AC_UF894,1000_QL80_.jpg" alt="" />
+            <h5>Dining Table</h5>
+          </div>
+        </a>
+
+        <a href="/category/Chairs">
+          <div class="home-category-card" >
+            <img src="https://images.durian.in/Durian/durian/product/800x800/489881709643325.jpg" alt="" />
+            <h5>Chairs</h5>
+          </div>
+        </a>
+
+        <a href="/category/Beds">
+          <div class="home-category-card" >
+            <img src="https://www.squaro.in/cdn/shop/products/IMG_20230301_145216.jpg?v=1678284114" alt="" />
+            <h5>Beds</h5>
+          </div>
+        </a>
+
+        <a href="/category/Wardobes">
+          <div class="home-category-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYXGizyrLqKnMeviF7mE9Vfn_keNbAI0BrkQ&s" alt="" />
+            <h5>Wardobes</h5>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="products-container">
+
+
+        <div class="products-body">
+            <h3>All Products</h3>
+            <div class="products">
+
+                  {% for product in products %}
+                      <a href="/load-product/{{product.id}}">
+                        <div class='product-item' >
+                            <div class="product" >
+                                <img src="{{product.mainImg}}" alt="" />
+                                <div class="product-data">
+                                    <h6>{{product.title}}</h6>
+                                    <p>{{product.description}}</p>
+                                    <h5>&#8377; {{product.discountedPrice}} <s>{{product.price}}</s><p>( {{product.discount}}% off)</p></h5>
+                                </div>
+                            </div>
+                        </div>
+                      </a>
+                  {% endfor %}
+
+                  {% if trendLen == 0 %}
+                    <P>No products available....</p>
+                  {% endif %}
+ 
+            </div>
+        </div>
+      </div>
+
+
+      <Footer />
+    </div>
+
+{% endblock %}
